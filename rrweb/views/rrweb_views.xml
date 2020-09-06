@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="rrweb_recording_form_view" model="ir.ui.view">
+        <field name="name">rrweb.recording.form</field>
+        <field name="model">rrweb.recording</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="create_date"/>
+                    <field name="events" widget="rrweb_player"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="rrweb_recording_tree_view" model="ir.ui.view">
+        <field name="name">rrweb.recording.tree</field>
+        <field name="model">rrweb.recording</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="create_date"/>
+                <field name="create_uid"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="rrweb_recording_action">
+        <field name="name">rrweb recordings</field>
+        <field name="res_model">rrweb.recording</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="rrweb_recording_tree_view"/>
+    </record>
+
+    <menuitem id="menu_rrweb" name="rrweb recordings" parent="base.menu_administration" action="rrweb_recording_action"/>
+</odoo>
