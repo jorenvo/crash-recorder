@@ -18,6 +18,7 @@ class RRWebRecording(models.Model):
     )
     error = fields.Text("Error", help="Error that occurred in this recording")
 
+    @api.depends("events_compressed")
     def _compute_events(self):
         for recording in self:
             recording.events = b64encode(
