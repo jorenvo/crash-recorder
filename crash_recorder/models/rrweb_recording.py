@@ -6,6 +6,7 @@ import zlib
 
 _logger = logging.getLogger(__name__)
 
+
 class RRWebRecording(models.Model):
     _name = "rrweb.recording"
     _description = "Recordings of user actions leading up to a crash"
@@ -37,5 +38,7 @@ class RRWebRecording(models.Model):
         """ Avoid bloating the database with lots of recordings. """
         limit_date = fields.Datetime.subtract(fields.Datetime.now(), days=30)
         to_unlink = self.search([("create_date", "<", limit_date)])
-        _logger.info("Deleting %s crash recordings older than %s", len(to_unlink), limit_date)
+        _logger.info(
+            "Deleting %s crash recordings older than %s", len(to_unlink), limit_date
+        )
         to_unlink.unlink()
