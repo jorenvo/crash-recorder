@@ -25,6 +25,6 @@ class RRWebRecording(models.Model):
             )
 
     def _inverse_events(self):
-        """ A recording can be >3 MiB, so compress it. """
+        """ A recording can be >3 MiB, so compress it. Compression ratio is ~10. """
         for recording in self:
             recording.events_compressed = b64encode(zlib.compress(recording.events))
