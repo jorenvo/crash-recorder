@@ -1,6 +1,7 @@
 # coding: utf-8
 from odoo import api, fields, models, SUPERUSER_ID, _
-from base64 import b64encode
+from base64 import b64encode, b64decode
+import zlib
 
 class RRWebRecording(models.Model):
     _name = "rrweb.recording"
@@ -8,14 +9,20 @@ class RRWebRecording(models.Model):
     _rec_name = "create_date"
     _order = "create_date desc"
 
-    events = fields.Binary("Events", help="Raw rrweb json events", attachment=True)
+    events = fields.Binary("Events", compute='_compute_events', inverse='_inverse_events', store=False)
+    events_compressed = fields.Binary("Compressed Events", help="Raw rrweb JSON events", attachment=True)
     error = fields.Text("Error", help="Error that occurred in this recording")
+
+    def _compute_events(self):
+        for recording in self:
+            recording.events = b64encode(zlib.decompress(b64decode(recording.events_compressed)))
+
+    def _inverse_events(self):
+        """ A recording can be >3 MiB, so compress it. """
+        for recording in self:
+            recording.events_compressed = b64encode(zlib.compress(recording.events))
 
     @api.model
     def save(self, vals):
-        """This is a wrapper around create so we can base64 encode the sent
-        events string. window.btoa isn't used client-side because it
-        doesn't support UTF-8.
-        """
-        vals["events"] = b64encode(vals["events"].encode())
+        # vals["events"] = zlib.compress(vals["events"].encode())
         return self.create(vals)
