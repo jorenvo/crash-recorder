@@ -16,5 +16,9 @@ Crash recordings can be found in the Settings app under "Crash Recordings":
 
 ![Crash Recordings in Settings app](/media/settings.png)
 
+A notice is displayed that informs user their behavior could be recorded:
+
+![Recording notice](/media/notice.png)
+
 ## Acknowledgements
 This relies on the excellent [rrweb library](https://www.rrweb.io) to do the hard part (the recording and playback).
