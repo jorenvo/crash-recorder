@@ -21,8 +21,3 @@ class RRWebRecording(models.Model):
         """ A recording can be >3 MiB, so compress it. """
         for recording in self:
             recording.events_compressed = b64encode(zlib.compress(recording.events))
-
-    @api.model
-    def save(self, vals):
-        # vals["events"] = zlib.compress(vals["events"].encode())
-        return self.create(vals)
