@@ -2,7 +2,7 @@
 An Odoo 14 app that records crashes.
 
 ## Introduction
-Have users ever reported errors without any details? A copy-paste of a traceback is usually not enough to analyze and debug a problem. It takes back and forth with the user to explain they need to provide more info. It also takes effort for the user to detail the steps they took that produced the error, and often times they don't remember exactly what they did.
+Have users ever reported errors without any details? A copy-paste of a traceback is usually not enough to analyze and debug a problem. It takes time to explain to the user they need to provide more info. It also takes effort for the user to detail the steps they took that produced the error, and often times they don't remember exactly what they did.
 
 This module solves this problem. It continually records to a circular buffer and saves a 1 minute screen recording when an error happens. Administrators can then view the recording and the traceback.
 
