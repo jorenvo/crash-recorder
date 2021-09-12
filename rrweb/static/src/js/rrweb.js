@@ -34,7 +34,7 @@ odoo.define('rrweb.rrweb', function (require) {
             });
         },
 
-        rrwebSaveEvents: function() {
+        rrwebSaveEvents: function(traceback) {
             var toSave = [];
 
             if (self.rrwebWritingToBufferA) {
@@ -47,7 +47,7 @@ odoo.define('rrweb.rrweb', function (require) {
             rpc.query({
                 model: "rrweb.recording",
                 method: "save",
-                args: [{events: b64Events}],
+                args: [{events: b64Events, error: traceback}],
             });
         },
 
@@ -55,19 +55,19 @@ odoo.define('rrweb.rrweb', function (require) {
          * A delayed wrapper around rrwebSaveEvents to still capture
          * part of the error screen.
          */
-        rrwebSaveEventsSoon: function() {
-            setTimeout(this.rrwebSaveEvents.bind(this), 3000);
+        rrwebSaveEventsSoon: function(traceback) {
+            setTimeout(() => this.rrwebSaveEvents(traceback), 3000);
         },
 
-        show_warning: function (error, options) {
-            var res = this._super.apply(this, arguments);
-            this.rrwebSaveEventsSoon();
-            return res;
-        },
+        // show_warning: function (error, options) {
+        //     var res = this._super.apply(this, arguments);
+        //     this.rrwebSaveEventsSoon();
+        //     return res;
+        // },
 
         show_error: function (error) {
             var res = this._super.apply(this, arguments);
-            this.rrwebSaveEventsSoon();
+            this.rrwebSaveEventsSoon(error.traceback);
             return res;
         },
     });

@@ -9,6 +9,7 @@ class RRWebRecording(models.Model):
     _order = "create_date desc"
 
     events = fields.Binary("Events", help="Raw rrweb json events", attachment=True)
+    error = fields.Text("Error", help="Error that occurred in this recording")
 
     @api.model
     def save(self, vals):
