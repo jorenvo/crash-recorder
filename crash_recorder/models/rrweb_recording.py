@@ -1,8 +1,10 @@
 # coding: utf-8
 from odoo import api, fields, models, SUPERUSER_ID, _
 from base64 import b64encode, b64decode
+import logging
 import zlib
 
+_logger = logging.getLogger(__name__)
 
 class RRWebRecording(models.Model):
     _name = "rrweb.recording"
@@ -29,3 +31,11 @@ class RRWebRecording(models.Model):
         """ A recording can be >3 MiB, so compress it. Compression ratio is ~10. """
         for recording in self:
             recording.events_compressed = b64encode(zlib.compress(recording.events))
+
+    @api.autovacuum
+    def _gc_recordings(self):
+        """ Avoid bloating the database with lots of recordings. """
+        limit_date = fields.Datetime.subtract(fields.Datetime.now(), days=30)
+        to_unlink = self.search([("create_date", "<", limit_date)])
+        _logger.info("Deleting %s crash recordings older than %s", len(to_unlink), limit_date)
+        to_unlink.unlink()
