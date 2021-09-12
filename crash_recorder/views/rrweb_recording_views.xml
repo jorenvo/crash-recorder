@@ -6,6 +6,7 @@
         <field name="arch" type="xml">
             <form>
                 <group>
+                    <field name="create_uid"/>
                     <field name="create_date"/>
                     <field name="events" string="Recording" widget="rrweb_player"/>
                     <field name="error"/>
