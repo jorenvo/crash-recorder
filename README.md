@@ -14,11 +14,11 @@ Before installing make sure to check your local laws and regulations regarding r
 
 Crash recordings can be found in the Settings app under "Crash Recordings":
 
-![Crash Recordings in Settings app](/media/settings.png)
+<img alt="Crash Recordings in Settings app" src="/media/settings.png" width="500">
 
 A notice is displayed that informs user their behavior could be recorded:
 
-![Recording notice](/media/notice.png)
+<img alt="Recording notice" src="/media/notice.png" width="150">
 
 Here's a short screencast of the app in action:
 
