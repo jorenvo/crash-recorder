@@ -43,11 +43,10 @@ odoo.define('rrweb.rrweb', function (require) {
                 toSave = this.rrwebBufferA.concat(this.rrwebBufferB);
             }
 
-            var b64Events = JSON.stringify({toSave});
             rpc.query({
                 model: "rrweb.recording",
                 method: "create",
-                args: [{events: b64Events, error: traceback}],
+                args: [{events: JSON.stringify({toSave}), error: traceback}],
             });
         },
 
