@@ -7,7 +7,7 @@
             <form>
                 <group>
                     <field name="create_date"/>
-                    <field name="events" widget="rrweb_player"/>
+                    <field name="events" string="Recording" widget="rrweb_player"/>
                 </group>
             </form>
         </field>
