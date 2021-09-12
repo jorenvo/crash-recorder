@@ -5,6 +5,8 @@ from base64 import b64encode
 class RRWebRecording(models.Model):
     _name = "rrweb.recording"
     _description = "Recordings of user actions leading up to a crash"
+    _rec_name = "create_date"
+    _order = "create_date desc"
 
     events = fields.Binary("Events", help="Raw rrweb json events", attachment=True)
 
