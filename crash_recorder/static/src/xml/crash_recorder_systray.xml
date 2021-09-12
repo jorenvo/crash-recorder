@@ -6,7 +6,10 @@
                 <i class="fa fa-video-camera" role="img" aria-label="Crash Recording"/>
             </a>
             <div class="crash_recording_systray_dropdown dropdown-menu dropdown-menu-right" role="menu">
-                <span>Actions leading up to a crash are recorded and reported to the administrator.</span>
+                <span>
+                    <p>Actions leading up to a crash are recorded and reported to the administrator.</p>
+                    <p>This consists of a 1 minute recording of the Odoo webpage on which the error occurs. It does <b>not</b> include any webcam or sound recordings.</p>
+                </span>
             </div>
         </li>
     </t>
