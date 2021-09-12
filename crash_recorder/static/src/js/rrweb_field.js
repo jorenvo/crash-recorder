@@ -1,4 +1,4 @@
-odoo.define('rrweb.rrweb_field', function (require) {
+odoo.define('crash_recorder.rrweb_field', function (require) {
     var core = require('web.core');
     var basic_fields = require('web.basic_fields');
     var registry = require('web.field_registry');

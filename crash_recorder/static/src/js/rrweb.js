@@ -1,4 +1,4 @@
-odoo.define('rrweb.rrweb', function (require) {
+odoo.define('crash_recorder.rrweb', function (require) {
     "use strict";
 
     var rpc = require("web.rpc");
