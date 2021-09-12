@@ -46,7 +46,7 @@ odoo.define('crash_recorder.rrweb', function (require) {
                         self.rrwebBufferB.push(event);
                     }
                 },
-                checkoutEveryNms: 60 * 1000, // checkout every minute
+                checkoutEveryNms: 30 * 1000, // checkout every 30 seconds
             });
         },
 
