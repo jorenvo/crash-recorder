@@ -25,11 +25,11 @@
     </record>
 
     <record model="ir.actions.act_window" id="rrweb_recording_action">
-        <field name="name">rrweb recordings</field>
+        <field name="name">Crash Recordings</field>
         <field name="res_model">rrweb.recording</field>
         <field name="view_mode">tree,form</field>
         <field name="view_id" ref="rrweb_recording_tree_view"/>
     </record>
 
-    <menuitem id="menu_rrweb" name="rrweb recordings" parent="base.menu_administration" action="rrweb_recording_action"/>
+    <menuitem id="menu_rrweb" name="Crash Recordings" parent="base.menu_administration" action="rrweb_recording_action"/>
 </odoo>
