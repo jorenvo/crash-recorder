@@ -28,6 +28,9 @@ Automatically record user actions leading to errors.
         "views/crash_recorder_templates.xml",
         "security/ir.model.access.csv",
     ],
-    "qweb": ["static/src/xml/rrweb_field.xml"],
+    "qweb": [
+        "static/src/xml/rrweb_field.xml",
+        "static/src/xml/crash_recorder_systray.xml",
+    ],
     "license": "LGPL-3",
 }
