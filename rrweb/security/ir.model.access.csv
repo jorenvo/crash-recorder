@@ -1,3 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_rrweb_recording_user,access_rrweb_recording_user,model_rrweb_recording,base.group_user,0,0,1,0
+access_rrweb_recording_user,access_rrweb_recording_user,model_rrweb_recording,base.group_user,0,1,1,0
 access_rrweb_recording_system,access_rrweb_recording_system,model_rrweb_recording,base.group_system,1,1,1,1
