@@ -20,5 +20,9 @@ A notice is displayed that informs user their behavior could be recorded:
 
 ![Recording notice](/media/notice.png)
 
+Here's a short screencast of the app in action:
+
+https://user-images.githubusercontent.com/10252581/132998188-390e0461-5a47-45db-bcd4-1bfb695a1497.mov
+
 ## Acknowledgements
 This relies on the excellent [rrweb library](https://www.rrweb.io) to do the hard part (the recording and playback).
