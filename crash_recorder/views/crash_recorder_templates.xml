@@ -3,7 +3,7 @@
     <template id="assets_common" inherit_id="web.assets_common">
         <xpath expr="." position="inside">
             <script src="https://cdn.jsdelivr.net/npm/rrweb@1.0.5/dist/rrweb-all.min.js"></script>
-            <script type="text/javascript" src="/rrweb/static/src/js/rrweb.js"></script>
+            <script type="text/javascript" src="/crash_recorder/static/src/js/rrweb.js"></script>
         </xpath>
     </template>
 
@@ -11,7 +11,7 @@
         <xpath expr="." position="inside">
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/rrweb-player@0.7.7/dist/style.min.css"/>
             <script src="https://cdn.jsdelivr.net/npm/rrweb-player@0.7.7/dist/index.min.js"></script>
-            <script type="text/javascript" src="/rrweb/static/src/js/rrweb_field.js"></script>
+            <script type="text/javascript" src="/crash_recorder/static/src/js/rrweb_field.js"></script>
         </xpath>
     </template>
 </odoo>
