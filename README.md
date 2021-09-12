@@ -13,3 +13,6 @@ Before installing make sure to check your local laws and regulations regarding r
 ## How to use
 
 TODO
+
+## Acknowledgements
+This relies on the excellent [rrweb library](https://www.rrweb.io) to do the hard part (the recording and playback).
