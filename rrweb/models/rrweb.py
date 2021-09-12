@@ -9,7 +9,7 @@ class RRWebRecording(models.Model):
     _rec_name = "create_date"
     _order = "create_date desc"
 
-    events = fields.Binary("Events", compute='_compute_events', inverse='_inverse_events', store=False)
+    events = fields.Binary("Events", compute="_compute_events", inverse="_inverse_events", store=False)
     events_compressed = fields.Binary("Compressed Events", help="Raw rrweb JSON events", attachment=True)
     error = fields.Text("Error", help="Error that occurred in this recording")
 
